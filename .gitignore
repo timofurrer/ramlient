@@ -1,0 +1,18 @@
+# vim swap files
+*.swp
+
+# python bytecode files
+*.pyc
+__pycache__
+
+# tox files
+.tox
+
+# coverage files
+.coverage
+
+# virtualenvs
+env*
+
+# setuptools files
+*.egg-info
