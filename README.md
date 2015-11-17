@@ -3,6 +3,18 @@
 
 ***
 
+[![PyPI License](https://img.shields.io/pypi/l/ramlient.svg)](https://github.com/timofurrer/ramlient/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/timofurrer/ramlient.svg?branch=master)](https://travis-ci.org/timofurrer/ramlient)
+<br>
+[![codecov.io](https://codecov.io/github/timofurrer/ramlient/coverage.svg?branch=master)](https://codecov.io/github/timofurrer/ramlient?branch=master)
+[![Code Health](https://landscape.io/github/timofurrer/ramlient/master/landscape.svg?style=flat)](https://landscape.io/github/timofurrer/ramlient/master)
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/27441974a1a343d5813ad90cf0db3c07/badge.svg)](https://www.quantifiedcode.com/app/project/27441974a1a343d5813ad90cf0db3c07)
+<br>
+[![PyPI version](https://badge.fury.io/py/ramlient.svg)](https://badge.fury.io/py/ramlient)
+[![PyPI](https://img.shields.io/pypi/pyversions/ramlient.svg)](https://pypi.python.org/pypi/ramlient)
+[![PyPI](https://img.shields.io/pypi/wheel/ramlient.svg)](https://pypi.python.org/pypi/ramlient)
+[![PyPI](https://img.shields.io/pypi/dm/ramlient.svg)](https://pypi.python.org/pypi/ramlient)
+
 Author: Timo Furrer <tuxtimo@gmail.com> <br>
 License: **MIT** <br>
 
