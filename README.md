@@ -8,7 +8,7 @@
 <br>
 [![codecov.io](https://codecov.io/github/timofurrer/ramlient/coverage.svg?branch=master)](https://codecov.io/github/timofurrer/ramlient?branch=master)
 [![Code Health](https://landscape.io/github/timofurrer/ramlient/master/landscape.svg?style=flat)](https://landscape.io/github/timofurrer/ramlient/master)
-[![Code Issues](https://www.quantifiedcode.com/api/v1/project/27441974a1a343d5813ad90cf0db3c07/badge.svg)](https://www.quantifiedcode.com/app/project/27441974a1a343d5813ad90cf0db3c07)
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/5746a7109123441bbd833013b5f173c5/badge.svg)](https://www.quantifiedcode.com/app/project/5746a7109123441bbd833013b5f173c5)
 <br>
 [![PyPI version](https://badge.fury.io/py/ramlient.svg)](https://badge.fury.io/py/ramlient)
 [![PyPI](https://img.shields.io/pypi/pyversions/ramlient.svg)](https://pypi.python.org/pypi/ramlient)
