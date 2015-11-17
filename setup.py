@@ -46,7 +46,7 @@ setup(
     url=get_meta("url"),
     download_url=get_meta("download_url"),
     packages=["ramlient"],
-    install_requires=["ramlfications", "requests"],
+    install_requires=["ramlfications>=0.1.8", "requests"],
     include_package_data=True,
     classifiers=[
         "Development Status :: 4 - Beta",
