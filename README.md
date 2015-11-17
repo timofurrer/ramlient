@@ -1,4 +1,4 @@
-# ramlient - client for RAML backends in python
+# ramlient - RAML client for python
 > RESTful API Modeling Language (RAML) client
 
 ***
