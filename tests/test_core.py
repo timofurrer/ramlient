@@ -10,8 +10,7 @@ from sure import expect
 import types
 
 from ramlient.core import Client, Node, ParameterizedNode
-from ramlient.exceptions import UnsupportedResourceMethodError
-
+from ramlient.exceptions import UnsupportedResourceMethodError, UnsupportedQueryParameter
 
 
 class TestCore(TestCase):
@@ -86,3 +85,17 @@ class TestCore(TestCase):
             expect(str(e)).to.be.equal("Resource '/resource/{resourceId}' does not support method 'delete'")
         else:
             RuntimeError("Should not enter here")
+
+    def test_passing_query_parameter_to_resource(self):
+        """
+            Test passing query parameter to resource
+        """
+        client = Client(self.SIMPLE_RAML_URL)
+        try:
+            client.resource.resourceId(5).get(foo="42")
+        except UnsupportedQueryParameter as e:
+            expect(str(e)).to.be.equal("Resource '/resource/{resourceId}' does not support Query Parameter 'foo'")
+        else:
+            RuntimeError("Should not enter here")
+
+        # client.resource.resourceId(5).get(filter="42")

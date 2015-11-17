@@ -33,3 +33,11 @@ class UnsupportedResourceMethodError(RamlientError):
     """
     def __init__(self, resource_path, method):
         super(UnsupportedResourceMethodError, self).__init__("Resource '{0}' does not support method '{1}'".format(resource_path, method))
+
+
+class UnsupportedQueryParameter(RamlientError):
+    """
+        Exception which is raised if the certain resource does not support the certain query parameter
+    """
+    def __init__(self, resource_path, query_parameter):
+        super(UnsupportedQueryParameter, self).__init__("Resource '{0}' does not support Query Parameter '{1}'".format(resource_path, query_parameter))
