@@ -6,11 +6,11 @@
 """
 
 import requests
+from ramlfications.raml import AVAILABLE_METHODS
 
 from .exceptions import UnsupportedHTTPMethodError
 
 
-SUPPORTED_METHODS = ["OPTIONS", "CONNECT", "TRACE", "PATCH", "DELETE", "GET", "POST", "PUT"]
 
 
 def prepare_request(node):
@@ -19,7 +19,7 @@ def prepare_request(node):
 
         :param Node node: the RAML node object
     """
-    if node.resource.method.upper() not in SUPPORTED_METHODS:
+    if node.resource.method not in AVAILABLE_METHODS:
         raise UnsupportedHTTPMethodError(node.resource.method)
 
 

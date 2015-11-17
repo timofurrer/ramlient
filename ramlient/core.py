@@ -9,7 +9,7 @@ import ramlfications
 from collections import namedtuple
 
 from . import utils
-from .request import SUPPORTED_METHODS, prepare_request
+from .request import AVAILABLE_METHODS, prepare_request
 from .exceptions import ResourceNotFoundError, UnsupportedResourceMethodError
 
 NodeParameter = namedtuple("NodeParameter", ["resource", "parameter"])
@@ -30,7 +30,7 @@ class Node(object):
         """
             Accessing sub node
         """
-        if attr.upper() in SUPPORTED_METHODS:
+        if attr in AVAILABLE_METHODS:
             self._patch_resource(attr)
             return prepare_request(self)
 
