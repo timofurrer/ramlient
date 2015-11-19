@@ -99,3 +99,15 @@ class TestCore(TestCase):
             RuntimeError("Should not enter here")
 
         # client.resource.resourceId(5).get(filter="42")
+
+    def test_passing_wrong_typed_query_parameter_to_resource(self):
+        """
+            Test passing wrong typed query parameter to resource
+        """
+        client = Client(self.SIMPLE_RAML_URL)
+        try:
+            client.resource.resourceId(5).get(filter=42)
+        except TypeError as e:
+            expect(str(e)).to.be.equal("Resource Query Parameter has type 'int' but expected type 'string'")
+        else:
+            RuntimeError("Should not enter here")

@@ -34,3 +34,13 @@ class TestUtils(TestCase):
         """
         expect(utils.is_url("http://foo.com")).to.be.true
         expect(utils.is_url("/usr/bin")).to.be.false
+
+    def test_match_type_function(self):
+        """
+            Test if "match_type" function works
+        """
+        expect(utils.match_type("Hello", "string")).to.be.true
+        expect(utils.match_type(42, "integer")).to.be.true
+        expect(utils.match_type("Hello", "integer")).to.be.false
+        expect(utils.match_type(42, "string")).to.be.false
+        expect(utils.match_type(42, "weird_type")).to.be.false
