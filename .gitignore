@@ -16,3 +16,5 @@ env*
 
 # setuptools files
 *.egg-info
+build/
+dist/
