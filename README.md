@@ -20,9 +20,7 @@ License: **MIT** <br>
 
 ***
 
-## What?
-
-The name `ramlient` is combined from `RAML` and `client`. As the name says, `ramlient` automatically creates a python client for APIs providing a RAML file.
+**ramlient** makes it very easy to access RAML based APIs. Kenneth would probably call it *raml for humans* or something ;)
 
 ## Installation
 
