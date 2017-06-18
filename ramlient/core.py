@@ -51,7 +51,8 @@ class Node(object):
             raise ResourceNotFoundError(self.resource.path + "/" + attr)
 
         if hasattr(resource, "parameter"):
-            return lambda x: ParameterizedNode(self.client, resource.resource, {resource.parameter: x})
+            return lambda x: ParameterizedNode(
+                self.client, resource.resource, {resource.parameter: x})
         else:
             return Node(self.client, resource)
 

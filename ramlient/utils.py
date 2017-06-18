@@ -21,7 +21,7 @@ import requests
 
 if sys.version_info[0] == 2:  # python 2.x
     TYPES_MAPPING = {
-        "string": (str, unicode),
+        "string": (str, unicode),  # noqa
         "integer": int
     }
 else:  # python 3.x

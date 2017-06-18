@@ -5,11 +5,10 @@
 *.pyc
 __pycache__
 
-# tox files
-.tox
-
-# coverage files
+# test files
+.tox/
 .coverage
+.cache/
 
 # virtualenvs
 env*

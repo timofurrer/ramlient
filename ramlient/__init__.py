@@ -13,4 +13,4 @@
 __version__ = "0.1.0"
 
 
-from .core import Client, Node, ParameterizedNode
+from .core import Client, Node, ParameterizedNode  # noqa

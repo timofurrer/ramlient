@@ -22,7 +22,6 @@ def test_creating_client_from_raml_url(example_client):
     assert example_client.raml.title == 'Example API'
 
 
-
 @pytest.mark.parametrize('example_client', [
     'simple'
 ], indirect=['example_client'])
@@ -117,7 +116,8 @@ def test_passing_query_parameter_to_resource(example_client):
         example_client.resource.resourceId(5).get(foo=42)
 
     # then
-    assert str(exc.value) == "Resource '/resource/{resourceId}' does not support Query Parameter 'foo'"
+    assert str(exc.value) == "Resource '/resource/{resourceId}' does " \
+        "not support Query Parameter 'foo'"
 
 
 @pytest.mark.parametrize('example_client', [
