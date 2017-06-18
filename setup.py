@@ -5,7 +5,6 @@ import os
 import re
 import codecs
 from setuptools import setup
-from pip.req import parse_requirements
 
 
 def read_metafile(path):
@@ -14,7 +13,6 @@ def read_metafile(path):
     """
     with codecs.open(path, "rb", "utf-8") as meta_file:
         return meta_file.read()
-
 
 def get_meta(name):
     """
@@ -47,7 +45,10 @@ setup(
     url=get_meta("url"),
     download_url=get_meta("download_url"),
     packages=["ramlient"],
-    install_requires=list(x.name for x in parse_requirements("requirements.txt")),
+    install_requires=[
+        "ramlfications",
+        "requests"
+    ],
     include_package_data=True,
     classifiers=[
         "Development Status :: 3 - Alpha",
