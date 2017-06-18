@@ -22,7 +22,16 @@ install:
 
 script:
     - nosetests --rednose -v tests --with-cover --cover-package=ramlient/
-    #- flake8 --show-source ramlient/ tests/
 
 after_success:
     - codecov
+
+deploy:
+    provider: pypi
+    user: timofurrer
+    password:
+        secure: vhrDawK/mxPE9QEycI5q2kJVH2jiTXqdkHWB4rb4iZR+RfxFqgTfwjXm1SEnwKkkc0oGdm9nPWPRNaLo85qcQiunix2KTNPTpiingbOFOq764uNtlbLMxZlGp28BysneT4mFP7wRm+65JEZiKjimmAGkzT4TWRv+XUhMvb3Rs6LmxsckilW2DolLRARuZPmLRJgVJwTbyBP2D+lEv9/UMuPE3baAC9c5FVletXH8YcUDoLD7XEB1MFGQJsDYK69t8+QVeijUDZSvqa1R62cU0eLJmYojDpUYm3r29YG0qjddSm0P5x6MvSEe2/Ybb6GdRyaSzVnI/T7R+XT30XYY5rR1mMZf76eLRi72AqUCi+E0iFhGmR2QKD870mSh77lHZ7oihi2nvrQoh5poPXkChdKRdQQ3EISDAZRYzUZoZdvyVKg8f0Xstga0Zhq9EPy8uGlxfNJENJYSIuinfeXCxcmS9X48WgS+/Ob3K0PWVwazP+yZqA72LqO76Vh9OnUOYyOA2gcqAbuI4aE0IM2CayJrR4N2DMW9u5aZI+0PnU/lbKbNnU5BALYrsB9U5fJ+kQe30c7xjrl3fRBY/w91KQjJdcQjEqbXNNvxrOfGsYwclz6AoIixY1KZMpBkjtd7nT4F5YiQIs38YbF1Rt8G/E2Ae02L4rYt4JkWrkIAc7E=
+    on:
+        tags: true
+        distributions: sdist bdist_wheel
+        repo: timofurrer/ramlient
