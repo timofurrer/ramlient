@@ -1,4 +1,4 @@
 -r requirements.txt
 flake8==3.3.0
 pytest==3.1.2
-coverage
+coverage==4.4.1
