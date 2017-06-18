@@ -114,8 +114,9 @@ class Client(object):
     """
         RAML client
     """
-    def __init__(self, ramlfile):
+    def __init__(self, ramlfile, ramlconfig=None):
         self.ramlfile = ramlfile
+        self.ramlconfig = ramlconfig
         self.raml = None
 
         self.parse_raml()
@@ -132,7 +133,7 @@ class Client(object):
                 raml = raml_f.read()
 
         loader = ramlfications.loads(raml)
-        config = ramlfications.setup_config(None)
+        config = ramlfications.setup_config(self.ramlconfig)
         self.raml = ramlfications.parse_raml(loader, config)
 
     def __getattr__(self, attr):

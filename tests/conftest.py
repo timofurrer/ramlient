@@ -19,6 +19,7 @@ from ramlient import Client
 
 __DATA_DIR__ = os.path.abspath(os.path.join(os.path.dirname(__file__), 'data/'))
 __EXAMPLES_DIR__ = os.path.join(__DATA_DIR__, 'examples')
+__EXAMPLES_CONFIG_TPL__ = os.path.join(__DATA_DIR__, 'examples', '{name}-config.ini')
 
 
 @pytest.fixture(scope='function')
@@ -29,5 +30,9 @@ def example_client(request):
     """
     example_name = request.param
     example_path = os.path.join(__EXAMPLES_DIR__, example_name + '.raml')
-    client = Client(example_path)
+    example_config = __EXAMPLES_CONFIG_TPL__.format(name=example_name)
+    if not os.path.exists(example_config):
+        example_config = None
+
+    client = Client(example_path, ramlconfig=example_config)
     return client

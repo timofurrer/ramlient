@@ -2,22 +2,6 @@
 ---
 title: Example API
 baseUri: http://example.com
-securitySchemes:
-  - basic:
-      type: Basic Authentication
-traits:
-  - secured:
-      description: Some requests require authentication
-  - unsecured:
-      description: This is not secured
-  - catpictures:
-      description: requires cat headers
-  - anotherTrait: {}
-  - andAnotherTrait: {}
-  - andYetAnotherTrait: {}
-  - aFinalTrait: {}
-  - someParameterizedTrait:
-      description: <<someParameterName>>
 resourceTypes:
   - longCollectionName:
       description: |
@@ -39,7 +23,6 @@ documentation:
       **Bolded content**
 /resource:
   displayName: First One
-  is: [secured]
   options:
     responses:
       200:
@@ -122,7 +105,6 @@ documentation:
 /another/resource:
   displayName: Cats
   type: longCollectionName
-  is: [secured, catpictures, anotherTrait, andAnotherTrait]
   connect: !!null
   head:
     responses:
@@ -167,12 +149,6 @@ documentation:
   displayName: SO SECURE
   get:
     securedBy: [basic]
-/resource-with-method-level-traits:
-  displayName: First One
-  is: [secured]
-  get:
-    is: [unsecured, catpictures, anotherTrait, andAnotherTrait, andYetAnotherTrait, aFinalTrait, {someParameterizedTrait: { someParameterName: someParameterValue }}]
-    description: get the first one
 /resource-with-form-and-multipart-form-parameters:
   get:
     queryParameters:
