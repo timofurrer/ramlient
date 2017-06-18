@@ -4,43 +4,39 @@
     Test ramlient.utils module.
 """
 
-from unittest import TestCase
-from sure import expect
+import pytest
 
 from ramlient import utils
 
 
-class TestUtils(TestCase):
+@pytest.mark.parametrize('url, is_url', [
+    ('http://foo.com', True),
+    ('http://foo.com/bar', True),
+    ('http://foo.com/bar#foo', True),
+    ('http://foo.com/bar.txt?foo=bar', True),
+    ('bar.txt', False),
+    ('/usr/bin/', False),
+    ('../bar.txt', False),
+    ('./bar.txt', False)
+])
+def test_is_url_function(url, is_url):
     """
-        Test utils module
+        Test if "is_url" function works
     """
-    def test_download_existing_url(self):
-        """
-            Test downloading an existing file from an URL
-        """
-        testurl = "https://raw.githubusercontent.com/timofurrer/testfiles/master/awesome"
-        expect(utils.download_file(testurl).strip()).to.be.equal("Awesome!")
+    # then
+    assert utils.is_url(url) is is_url
 
-    def test_download_notexisting_url(self):
-        """
-            Test downloading a not existing file from an URL
-        """
-        testurl = "https://raw.githubusercontent.com/timofurrer/testfiles/master/doesnotexist"
-        expect(utils.download_file(testurl)).to.be.none
 
-    def test_is_url_function(self):
-        """
-            Test if "is_url" function works
-        """
-        expect(utils.is_url("http://foo.com")).to.be.true
-        expect(utils.is_url("/usr/bin")).to.be.false
-
-    def test_match_type_function(self):
-        """
-            Test if "match_type" function works
-        """
-        expect(utils.match_type("Hello", "string")).to.be.true
-        expect(utils.match_type(42, "integer")).to.be.true
-        expect(utils.match_type("Hello", "integer")).to.be.false
-        expect(utils.match_type(42, "string")).to.be.false
-        expect(utils.match_type(42, "weird_type")).to.be.false
+@pytest.mark.parametrize('value, expected_type, does_match', [
+    ('Hello', 'string', True),
+    ('Hello', 'integer', False),
+    (42, 'integer', True),
+    (42, 'string', False),
+    (42, 'weird_type', False),
+])
+def test_match_type_function(value, expected_type, does_match):
+    """
+        Test if "match_type" function works
+    """
+    # then
+    assert utils.match_type(value, expected_type) is does_match

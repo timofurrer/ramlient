@@ -7,7 +7,6 @@ python:
     - '3.6'
     - '3.7-dev'
     - 'pypy'
-    - 'pypy3'
     - 'pypy-5.3.1'
 
 matrix:
@@ -21,7 +20,8 @@ install:
     - pip install -r requirements-dev.txt
 
 script:
-    - nosetests --rednose -v tests --with-cover --cover-package=ramlient/
+    - coverage run --source ramlient -m pytest tests/ -s
+    - coverage report
 
 after_success:
     - codecov
