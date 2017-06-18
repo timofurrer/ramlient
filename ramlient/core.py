@@ -51,7 +51,7 @@ class Node(object):
             Returns the absolute uri for given resource, after joining the base
             uri.
         """
-        return urljoin(self.base_uri, self.path)
+        return urljoin(self.client.base_uri, self.path)
 
     @property
     def path(self):
