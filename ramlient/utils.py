@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
 
 """
-    Utility functions used in ramlient.
+    ramlient
+    ~~~~~~~~
+
+    Access to a RAML API done right, in Python.
+
+    :copyright: (c) 2017 by Timo Furrer <tuxtimo@gmail.com>
+    :license: MIT, see LICENSE for more details.
 """
 
 import sys

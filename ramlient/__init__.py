@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 
 """
-    The name `ramlient` is combined from `RAML` and `client`.
-    As the name says, `ramlient` automatically creates a python
-    client for APIs providing a RAML file.
+    ramlient
+    ~~~~~~~~
+
+    Access to a RAML API done right, in Python.
+
+    :copyright: (c) 2017 by Timo Furrer <tuxtimo@gmail.com>
+    :license: MIT, see LICENSE for more details.
 """
 
-__VERSION__ = "0.0.1"
-__LICENSE__ = "MIT"
-__AUTHOR__ = "Timo Furrer"
-__AUTHOR_EMAIL__ = "tuxtimo@gmail.com"
-__DESCRIPTION__ = "foo"
-__URL__ = ""
-__DOWNLOAD_URL__ = ""
+__version__ = "0.1.0"
+
 
 from .core import Client, Node, ParameterizedNode

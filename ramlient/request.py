@@ -1,15 +1,20 @@
 # -*- coding: utf-8 -*-
 
 """
-    Module which provides functionality to make requests
-    to the API from the path of RAML nodes.
+    ramlient
+    ~~~~~~~~
+
+    Access to a RAML API done right, in Python.
+
+    :copyright: (c) 2017 by Timo Furrer <tuxtimo@gmail.com>
+    :license: MIT, see LICENSE for more details.
 """
 
 import requests
 from ramlfications.raml import AVAILABLE_METHODS
 
 from .utils import match_type
-from .exceptions import UnsupportedHTTPMethodError, UnsupportedQueryParameter
+from .errors import UnsupportedHTTPMethodError, UnsupportedQueryParameter
 
 
 def prepare_request(node):

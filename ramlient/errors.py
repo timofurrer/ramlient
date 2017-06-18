@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
 
 """
-    Module with all ramlient specific Exceptions.
+    ramlient
+    ~~~~~~~~
+
+    Access to a RAML API done right, in Python.
+
+    :copyright: (c) 2017 by Timo Furrer <tuxtimo@gmail.com>
+    :license: MIT, see LICENSE for more details.
 """
 
 class RamlientError(Exception):

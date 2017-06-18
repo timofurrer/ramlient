@@ -1,7 +1,13 @@
 # -*- coding: utf-8 -*-
 
 """
-    Core functionality for providing python interface to RAML API.
+    ramlient
+    ~~~~~~~~
+
+    Access to a RAML API done right, in Python.
+
+    :copyright: (c) 2017 by Timo Furrer <tuxtimo@gmail.com>
+    :license: MIT, see LICENSE for more details.
 """
 
 import codecs
@@ -12,7 +18,7 @@ from urllib.parse import urljoin
 
 from . import utils
 from .request import AVAILABLE_METHODS, prepare_request
-from .exceptions import ResourceNotFoundError, UnsupportedResourceMethodError
+from .errors import ResourceNotFoundError, UnsupportedResourceMethodError
 
 NodeParameter = namedtuple("NodeParameter", ["resource", "parameter"])
 
