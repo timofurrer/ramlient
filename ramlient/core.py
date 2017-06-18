@@ -7,6 +7,8 @@
 import codecs
 import ramlfications
 from collections import namedtuple
+from urllib.parse import urljoin
+
 
 from . import utils
 from .request import AVAILABLE_METHODS, prepare_request
@@ -42,6 +44,14 @@ class Node(object):
             return lambda x: ParameterizedNode(self.client, resource.resource, {resource.parameter: x})
         else:
             return Node(self.client, resource)
+
+    @property
+    def absolute_uri(self):
+        """
+            Returns the absolute uri for given resource, after joining the base
+            uri.
+        """
+        return urljoin(self.base_uri, self.path)
 
     @property
     def path(self):
@@ -98,6 +108,7 @@ class Client(object):
         self.raml = None
 
         self.parse_raml()
+        self.base_uri = self.raml.base_uri
 
     def parse_raml(self):
         """

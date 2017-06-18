@@ -36,6 +36,6 @@ def prepare_request(node):
                 raise TypeError("Resource Query Parameter has type '{0}' but expected type '{1}'".format(
                     value.__class__.__name__, param.type))
 
-        response = requests.request(node.resource.method, node.path, params=kwargs)
+        response = requests.request(node.resource.method, node.absolute_uri, params=kwargs)
         return response
     return request
