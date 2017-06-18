@@ -10,7 +10,7 @@ from sure import expect
 import types
 
 from ramlient.core import Client, Node, ParameterizedNode
-from ramlient.exceptions import UnsupportedResourceMethodError, UnsupportedQueryParameter
+from ramlient.errors import UnsupportedResourceMethodError, UnsupportedQueryParameter
 
 
 class TestCore(TestCase):

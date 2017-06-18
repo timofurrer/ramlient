@@ -11,12 +11,13 @@
 """
 
 import sys
-import requests
 
 try:  # python 2.x
     from urlparse import urlparse
 except ImportError:  # python 3.x
     from urllib.parse import urlparse
+
+import requests
 
 if sys.version_info[0] == 2:  # python 2.x
     TYPES_MAPPING = {

@@ -11,10 +11,14 @@
 """
 
 import codecs
-import ramlfications
 from collections import namedtuple
-from urllib.parse import urljoin
 
+try:  # python 2.x
+    from urlparse import urljoin
+except ImportError:  # python 3.x
+    from urllib.parse import urljoin
+
+import ramlfications
 
 from . import utils
 from .request import AVAILABLE_METHODS, prepare_request
