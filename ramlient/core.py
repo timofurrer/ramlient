@@ -150,7 +150,8 @@ class Client(object):
         dynamic_path = base_resource_path + "{" + resource_path + "}"
         for resource in self.raml.resources:
             method_matched = method is None or resource.method == method
-            if resource.path == basic_path and method_matched:
+            if ((resource.path == basic_path or (resource.path == basic_path + '/')) and
+               method_matched):
                 return resource
 
             if resource.path == dynamic_path and method_matched:
