@@ -13,11 +13,6 @@
 import codecs
 from collections import namedtuple
 
-try:  # python 2.x
-    from urlparse import urljoin
-except ImportError:  # python 3.x
-    from urllib.parse import urljoin
-
 import ramlfications
 
 from . import utils
@@ -55,14 +50,6 @@ class Node(object):
                 self.client, resource.resource, {resource.parameter: x})
         else:
             return Node(self.client, resource)
-
-    @property
-    def absolute_uri(self):
-        """
-            Returns the absolute uri for given resource, after joining the base
-            uri.
-        """
-        return urljoin(self.client.base_uri, self.path)
 
     @property
     def path(self):
