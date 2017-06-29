@@ -26,7 +26,7 @@ def prepare_request(node):
     if node.resource.method not in AVAILABLE_METHODS:
         raise UnsupportedHTTPMethodError(node.resource.method)
 
-    def request(**kwargs):
+    def request(data=None, json=None, **kwargs):
         """
             Make request to node's API route with the given keyword arguments
         """
@@ -41,6 +41,7 @@ def prepare_request(node):
                     "Resource Query Parameter has type '{0}' but expected type '{1}'".format(
                         value.__class__.__name__, param.type))
 
-        response = requests.request(node.resource.method, node.resource.absolute_uri, params=kwargs)
+        response = requests.request(node.resource.method, node.resource.absolute_uri, params=kwargs,
+                                    data=data, json=json)
         return response
     return request
