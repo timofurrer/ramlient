@@ -1,2 +1,2 @@
 ramlfications==0.1.9
-requests==2.18.1
+requests==2.18.2
