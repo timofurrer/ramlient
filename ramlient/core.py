@@ -127,6 +127,10 @@ class Client(object):
         """
             Access ResourceNode from RAML
         """
+        # Workaround for python doctest
+        if attr == '__wrapped__':
+            return False
+
         resource = self.get_resource("/", attr)
         if not resource:
             raise ResourceNotFoundError(attr)
